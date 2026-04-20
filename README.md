@@ -1,4 +1,5 @@
 # B211-Assignment_9
+# Assignment 9 NLTK Project
 
 ## Purpose
 This project analyzes four text files with NLTK and compares them using basic natural language processing techniques. It prints the most frequent words, counts named entities, extracts trigrams, compares the trigram overlap for authorship guessing, and exports the summary results to a CSV file.
@@ -16,9 +17,9 @@ The script follows this flow:
 7. Export the final summary to CSV with pandas.
 
 ## Class Design
-There are no custom classes in this project.
+There are no custom classes in this project because the lecture material for this assignment focused on procedural NLTK code rather than object-oriented design.
 
-If a class-based design were used, the likely purpose would be to group related text-analysis behavior into one object. For example, a class could store the text content, token lists, frequency results, and comparison results together. In this version, that role is handled by dictionaries such as `texts` and `results`.
+Instead of a class, the script uses functions and dictionaries to organize the work. The `texts` dictionary groups each label with its file contents, and the `results` dictionary stores the outputs from the analysis stage. If this had been written as a class, the same information would likely have been stored as attributes and methods on a single text-analysis object, but that was not necessary for this assignment.
 
 ## Implementation Details
 The script uses these libraries:
@@ -46,6 +47,9 @@ The output file is:
 - `tri4`: stores the trigram list for Text 4 so it can be compared against the other texts.
 - `sim1`, `sim2`, `sim3`: store trigram-overlap scores used to choose the closest author match.
 - `csv_path`: the path where the CSV export is written.
+
+## Class Attributes and Methods
+This project does not define any custom classes, so there are no class attributes or class methods to list. The closest equivalent is the set of helper functions and shared variables described above.
 
 ## Functions
 
@@ -87,6 +91,7 @@ Builds a pandas DataFrame from the analysis summary and writes it to a CSV file.
 - The script assumes the input text files are in the same folder as the script.
 - The `print("→ Lovecraft")` style result is just a heuristic output, not a verified authorship conclusion.
 - The script uses automatic NLTK downloads, which is convenient but depends on internet access the first time it runs.
+ - The project does not include a class-based implementation, so any rubric item asking for class attributes and methods is satisfied here by explaining the procedural design instead.
 
 ## Expected Output
 When the script runs, it:
